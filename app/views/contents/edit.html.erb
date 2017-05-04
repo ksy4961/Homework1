@@ -1,7 +1,7 @@
 <h1>글 수정하기</h1>
 <%= form_for @content do |f| %>
-  <%= f.text_field :title, :rows => 2 %><br><br>
-  <%= f.text_area :body, :rows => 15 , :cols => 80 %>
+  <P>제목</P></a><%= f.text_field :title, :rows => 2 %><br>
+  <p>내용</p><%= f.text_area :body, :rows => 15 , :cols => 80%><br><br>
   <%= f.submit %>
 <% end %>
 
