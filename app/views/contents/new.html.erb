@@ -1,0 +1,9 @@
+<h1>새 글쓰기</h1>
+
+<%= form_for @content do |f| %>
+  <%= f.text_field :title, :rows => 2 %><br><br>
+  <%= f.text_area :body, :rows => 15 , :cols => 80%>
+  <%= f.submit %>
+  
+  
+<% end %>

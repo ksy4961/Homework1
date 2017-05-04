@@ -1,0 +1,12 @@
+<h1>게시판</h1>
+
+<%= link_to '새 글쓰기', new_content_path %>
+<br><br>
+    <% @contents.each do |content| %>
+    <a href='<%= content_path(content) %>'>제목: <%= content.title %></a><br>
+    <%= link_to '수정하기', edit_content_path(content) %>
+    <%= link_to '삭제하기', content_path(content), method: :delete, 
+        data: {confirm: '정말 삭제하시겠습니까?'} %>
+    <br><br>
+<% end %>
+
