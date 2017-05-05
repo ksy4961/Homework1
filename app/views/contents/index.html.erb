@@ -1,12 +1,21 @@
 <h1>게시판</h1>
 
-<%= link_to '새 글쓰기', new_content_path %>
+<!--<%= link_to '새 글쓰기', new_content_path %>-->
 <br><br>
     <% @contents.each do |content| %>
+    <div class='well'>
+    <h3><%= content.title %></h3><br>
+    <p><%= content.body %></p><br>
+    <%= link_to '더보기', content_path(content), :class => 'btn btn-default' %>
+    </div>
+<!--   
     <a href='<%= content_path(content) %>'>제목: <%= content.title %></a><br>
     <%= link_to '수정', edit_content_path(content) %>
     <%= link_to '삭제', content_path(content), method: :delete, 
         data: {confirm: '정말 삭제하시겠습니까?'} %>
     <br><br>
+    
+-->
+    
 <% end %>
 

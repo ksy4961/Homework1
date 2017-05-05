@@ -1,7 +1,16 @@
 <h1>글 수정하기</h1>
-<%= form_for @content do |f| %>
-  <P>제목</P></a><%= f.text_field :title, :rows => 2 %><br>
-  <p>내용</p><%= f.text_area :body, :rows => 15 , :cols => 80%><br><br>
-  <%= f.submit %>
+<%= form_for :content, url: content_path(@content), method: :patch do |f| %>
+	<p>
+	제목
+	<%= f.text_field(:title, {:class => 'form-control'}) %>
+	</p>
+	
+	<p>
+	내용<br>
+	</p>
+  	<%= f.text_area(:body, {:class => 'form-control',:rows => 10}) %>
+  <br><br>
+  <p>
+     <%= f.submit({:class => 'btn btn-primary'})%>
+	</p>
 <% end %>
-

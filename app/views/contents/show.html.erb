@@ -1,8 +1,16 @@
-<h2>
-    제목:<%= @content.title %>
-</h2>
-<p>
-내용:<%= simple_format(@content.body)%>
-</p>
-<br>
-<a href="/">돌아가기</a>
+<%= form_for @content do |f| %>
+	<h2>제목</h2>
+	<%= f.text_field(:title, {:class => 'form-control'}) %><br>
+	
+	
+	<p>내용</p>
+  	<%= f.text_area(:body,{:class => 'form-control',:rows => 10}) %><br>
+  <br><br>
+<% end %>
+
+<%= link_to "Edit", edit_content_path(@content), :class => 'btn btn-default' %>
+<%= link_to "Delete", content_path(@content),
+					method: :delete,
+					data: {confirm: '정말 삭제하시겠습니까?'},
+					:class => 'btn btn-danger' %>
+<!--<a href="/">돌아가기</a>-->

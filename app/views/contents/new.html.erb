@@ -1,9 +1,10 @@
 <h1>새 글쓰기</h1>
 
+
 <%= form_for @content do |f| %>
-  <P>제목</P></a><%= f.text_field :title, :rows => 2 %><br>
-  <p>내용</p><%= f.text_area :body, :rows => 15 , :cols => 80%><br><br>
-  <%= f.submit %>
+  <P>제목</P></a><%= f.text_field(:title, {:class => 'form-control'}) %><br>
+  <p>내용</p><%= f.text_area(:body,{:class => 'form-control', :rows => 10}) %><br><br>
+  <%= f.submit({:class => 'btn btn-primary'}) %>
   
   
 <% end %>
