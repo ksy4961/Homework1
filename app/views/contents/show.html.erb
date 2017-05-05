@@ -1,8 +1,15 @@
-<h2><%= @content.title %></h2><br><br>
-<p><%= @content.body %></p><br><br><br><br><br><br>
+    <div class="panel panel panel-info">
+      <div class="panel-heading">
+        <h2 class="panel-title"><%= @content.title %></h2>
+      </div>
+      <div class="panel-body" rows= 13>
+        <%= @content.body %>
+      </div>
+    </div>
 
-<%= link_to "Edit", edit_content_path(@content), :class => 'btn btn-default' %>
-<%= link_to "Delete", content_path(@content),
+
+<%= link_to "수정", edit_content_path(@content), :class => 'btn btn-default' %>
+<%= link_to "삭제", content_path(@content),
 					method: :delete,
 					data: {confirm: '정말 삭제하시겠습니까?'},
 					:class => 'btn btn-danger' %>

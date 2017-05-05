@@ -4,7 +4,7 @@
 <%= form_for @content do |f| %>
   <P>제목</P></a><%= f.text_field(:title, {:class => 'form-control'}) %><br>
   <p>내용</p><%= f.text_area(:body,{:class => 'form-control', :rows => 10}) %><br><br>
-  <%= f.submit({:class => 'btn btn-primary'}) %>
   
+  <%= f.submit "등록", class: "btn btn-primary" %>
   
 <% end %>
