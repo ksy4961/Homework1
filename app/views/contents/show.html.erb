@@ -1,12 +1,5 @@
-<%= form_for @content do |f| %>
-	<h2>제목</h2>
-	<%= f.text_field(:title, {:class => 'form-control'}) %><br>
-	
-	
-	<p>내용</p>
-  	<%= f.text_area(:body,{:class => 'form-control',:rows => 10}) %><br>
-  <br><br>
-<% end %>
+<h2><%= @content.title %></h2><br><br>
+<p><%= @content.body %></p><br><br><br><br><br><br>
 
 <%= link_to "Edit", edit_content_path(@content), :class => 'btn btn-default' %>
 <%= link_to "Delete", content_path(@content),
